@@ -47,8 +47,9 @@ From the Example
 }
 ```
 
-produces
-![ScreenShot][https://raw.githubusercontent.com/2020Deception/D2LayoutHelperPod/master/Example/D2LayoutHelperPod/vertical.png]
+produces  
+![ScreenShot](https://raw.githubusercontent.com/2020Deception/D2LayoutHelperPod/master/Example/D2LayoutHelperPod/vertical.png)  
+
 ## Author
 
 Brian Bowman, 2020deception@gmail.com
