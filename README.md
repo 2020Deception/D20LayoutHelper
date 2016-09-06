@@ -20,9 +20,39 @@ it, simply add the following line to your Podfile:
 pod "D2LayoutHelperPod"
 ```
 
+From the Example
+```objc
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // set a view to match the superview
+    UIView *green = [UIView new];
+    green.backgroundColor = [UIColor greenColor];
+    [D20LayoutHelper widthHeightEquivalentsConstraintsWithSuperView:self.view subview:green];
+    
+    [self addLabels];
+//    [self addMoreLabels];
+}
+
+- (void)addLabels {
+    // evenly display some labels vertically
+    NSArray<UIView *> *views = [NSArray new];
+    for (int i = 0;  i < 25; i++) {
+        UILabel *someLabel = [UILabel new];
+        someLabel.text = [NSString stringWithFormat:@"label #%d", i+1];
+        [someLabel sizeToFit];
+        views = [views arrayByAddingObject:someLabel];
+    }
+    
+    [D20LayoutHelper evenVerticalConstraintsWithSuperView:self.view subviews:views];
+}
+```
+
+produces  
+![ScreenShot](https://raw.githubusercontent.com/2020Deception/D2LayoutHelperPod/master/Example/D2LayoutHelperPod/vertical.png)  
+
 ## Author
 
-Brian Bowman, brian.bowman@carrotcreative.com
+Brian Bowman, 2020deception@gmail.com
 
 ## License
 

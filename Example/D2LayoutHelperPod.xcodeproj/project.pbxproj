@@ -23,6 +23,8 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		8F1D1CF4F274D21193AF015D /* Pods_D2LayoutHelperPod_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81C7AC6A3EB4B319B383E8E /* Pods_D2LayoutHelperPod_Example.framework */; };
+		DA9440021D7F419E004EE252 /* vertical.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9440001D7F419E004EE252 /* vertical.png */; };
+		DA9440031D7F419E004EE252 /* horizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9440011D7F419E004EE252 /* horizontal.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		C32969A4BA235DCC54BB567B /* Pods_D2LayoutHelperPod_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_D2LayoutHelperPod_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE33A31B3E54A644FB819E56 /* Pods-D2LayoutHelperPod_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-D2LayoutHelperPod_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-D2LayoutHelperPod_Tests/Pods-D2LayoutHelperPod_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		D81C7AC6A3EB4B319B383E8E /* Pods_D2LayoutHelperPod_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_D2LayoutHelperPod_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA9440001D7F419E004EE252 /* vertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vertical.png; sourceTree = "<group>"; };
+		DA9440011D7F419E004EE252 /* horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = horizontal.png; sourceTree = "<group>"; };
 		DF62D177CF68BA60E222F855 /* Pods-D2LayoutHelperPod_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-D2LayoutHelperPod_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-D2LayoutHelperPod_Example/Pods-D2LayoutHelperPod_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +150,8 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* D2ViewController.h */,
 				6003F5A6195388D20070C39A /* D2ViewController.m */,
+				DA9440001D7F419E004EE252 /* vertical.png */,
+				DA9440011D7F419E004EE252 /* horizontal.png */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
@@ -277,6 +283,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
+				DA9440021D7F419E004EE252 /* vertical.png in Resources */,
+				DA9440031D7F419E004EE252 /* horizontal.png in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);

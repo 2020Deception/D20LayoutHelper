@@ -1,0 +1,6 @@
+framework module D2LayoutHelperPod {
+  umbrella header "D2LayoutHelperPod-umbrella.h"
+
+  export *
+  module * { export * }
+}
