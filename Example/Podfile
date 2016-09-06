@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'D2LayoutHelperPod_Example' do
+  pod 'D2LayoutHelperPod', :path => '../'
+
+  target 'D2LayoutHelperPod_Tests' do
+    inherit! :search_paths
+
+    pod 'FBSnapshotTestCase'
+  end
+end
