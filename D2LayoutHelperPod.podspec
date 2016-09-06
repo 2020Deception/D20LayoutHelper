@@ -18,7 +18,8 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Sometimes we get tired of defining constraints over and over. Do you feel like some of the methods are just too long? This
+Cocoapod provides a solution. Warning, you might fall in love ❤️.
                        DESC
 
   s.homepage         = 'https://github.com/2020deception/D2LayoutHelperPod'
