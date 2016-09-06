@@ -32,7 +32,7 @@
 		CA5A2AF46791995A412A866D3D0DCD56 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F1B0A45F864B16BBE8E470C07F8F740 /* Foundation.framework */; };
 		D5730E899C9FD7571D7A4260376C9C69 /* D2LayoutHelperPod-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C5468258186F8CFA8693176EDE34CFBE /* D2LayoutHelperPod-dummy.m */; };
 		D5C30BC656C11AF60394E3180A217BB1 /* UIImage+Snapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DBFBDCC891B770A2AC9EF0FB164B751 /* UIImage+Snapshot.m */; };
-		DA237DC51D7F1D3D00CC6272 /* D20LayoutHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = DA237DC31D7F1D3D00CC6272 /* D20LayoutHelper.h */; };
+		DA237DC51D7F1D3D00CC6272 /* D20LayoutHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = DA237DC31D7F1D3D00CC6272 /* D20LayoutHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DA237DC61D7F1D3D00CC6272 /* D20LayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DA237DC41D7F1D3D00CC6272 /* D20LayoutHelper.m */; };
 		E3F52A87DB5CE37A50226C0BA47C8D0F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F1B0A45F864B16BBE8E470C07F8F740 /* Foundation.framework */; };
 		EAA652557B70F493923A3447B5D64E0D /* UIImage+Compare.h in Headers */ = {isa = PBXBuildFile; fileRef = 432938111B6FF0189EFFEDF2F845B308 /* UIImage+Compare.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -393,8 +393,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA237DC51D7F1D3D00CC6272 /* D20LayoutHelper.h in Headers */,
 				118ED9081CFE6DD01824EF798D742177 /* D2LayoutHelperPod-umbrella.h in Headers */,
+				DA237DC51D7F1D3D00CC6272 /* D20LayoutHelper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
