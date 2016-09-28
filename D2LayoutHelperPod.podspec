@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'D2LayoutHelperPod'
-  s.version          = '0.1.1'
+  s.version          = '0.2.0'
   s.summary          = 'This gives you some simple methods to accomplish simple common tasks with NSLayoutConstraints.'
 
 # This description is used to generate tags and improve search results.
@@ -33,11 +33,4 @@ Cocoapod provides a solution. Warning, you might fall in love ❤️.
 
   s.source_files = 'D2LayoutHelperPod/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'D2LayoutHelperPod' => ['D2LayoutHelperPod/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

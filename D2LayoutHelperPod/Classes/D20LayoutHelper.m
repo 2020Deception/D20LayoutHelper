@@ -157,9 +157,6 @@
     
     [D20LayoutHelper prepViewsWithSuperview:superview subviews:@[subview]];
     
-    NSString *hashedViewString = [NSString stringWithFormat:@"_%@",
-                                  [NSNumber numberWithUnsignedInteger:subview.hash].stringValue];
-    
     [D20LayoutHelper constraintsForWidthAndHeightOnSuperView:superview subview:superview width:width height:height];
     
     NSLayoutConstraint *constraintX = [NSLayoutConstraint constraintWithItem:subview
@@ -178,7 +175,7 @@
                                                                   multiplier:1
                                                                     constant:0];
     
-    NSArray *constraints = [[NSArray arrayWithArray:constraintX] arrayByAddingObjectsFromArray:constraintY];
+    NSArray<NSLayoutConstraint *> *constraints = @[constraintX, constraintY];
     
     [NSLayoutConstraint activateConstraints:constraints];
     
