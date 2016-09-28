@@ -9,7 +9,10 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
+## Info  
+  
+D2LayoutHelperPod contains helper autolayout functions that will help make your autolayout work much easier :-)  
+There are several helper pods that may help simplify things for you. Enjoy!
 
 ## Installation
 
@@ -21,7 +24,7 @@ pod "D2LayoutHelperPod"
 ```
 
 From the Example
-```
+```objc
 - (void)viewDidLoad {
     [super viewDidLoad];
     // set a view to match the superview

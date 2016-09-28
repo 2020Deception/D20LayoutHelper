@@ -21,7 +21,8 @@
     // set a view to match the superview
     UIView *green = [UIView new];
     green.backgroundColor = [UIColor greenColor];
-    [D20LayoutHelper widthHeightEquivalentsConstraintsWithSuperView:self.view subview:green];
+    [D20LayoutHelper widthHeightEquivalentsConstraintsWithSuperView:self.view
+                                                            subview:green];
     
     [self addLabels];
 //    [self addMoreLabels];
@@ -37,7 +38,11 @@
         views = [views arrayByAddingObject:someLabel];
     }
     
-    [D20LayoutHelper evenVerticalConstraintsWithSuperView:self.view subviews:views];
+    [D20LayoutHelper evenConstraintsWithSuperView:self.view
+                                                 subviews:views
+                                                alignment:UIStackViewAlignmentCenter
+                                             distribution:UIStackViewDistributionFill
+                                             axis:UILayoutConstraintAxisVertical];
 }
 
 - (void)addMoreLabels {
@@ -58,7 +63,11 @@
         views = [views arrayByAddingObject:someLabel];
     }
     
-    [D20LayoutHelper evenHorizontalConstraintsWithSuperView:self.view subviews:views];
+    [D20LayoutHelper evenConstraintsWithSuperView:self.view
+                                                   subviews:views
+                                                  alignment:UIStackViewAlignmentCenter
+                                               distribution:UIStackViewDistributionFill
+                                             axis:UILayoutConstraintAxisHorizontal];
 }
 
 
