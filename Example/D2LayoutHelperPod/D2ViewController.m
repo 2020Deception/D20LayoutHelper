@@ -21,28 +21,30 @@
     // set a view to match the superview
     UIView *green = [UIView new];
     green.backgroundColor = [UIColor greenColor];
-    [D20LayoutHelper widthHeightEquivalentsConstraintsByLayoutMarginsGuideWithSuperView:self.view
+    [D20LayoutHelper widthHeightEquivalentsConstraintsWithSuperView:self.view
                                                                                 subview:green];
     
     [self addLabels];
-//    [self addMoreLabels];
+    [self addMoreLabels];
 }
 
 - (void)addLabels {
     // evenly display some labels vertically
     NSArray<UIView *> *views = [NSArray new];
-    for (int i = 0;  i < 25; i++) {
+    for (int i = 0;  i < 3; i++) {
         UILabel *someLabel = [UILabel new];
         someLabel.text = [NSString stringWithFormat:@"label #%d", i+1];
+        someLabel.backgroundColor = [UIColor yellowColor];
         [someLabel sizeToFit];
         views = [views arrayByAddingObject:someLabel];
     }
     
-    [D20LayoutHelper evenConstraintsByLayoutMarginsGuideWithSuperView:self.view
-                                                             subviews:views
-                                                            alignment:UIStackViewAlignmentFill
-                                                         distribution:UIStackViewDistributionFillEqually
-                                                                 axis:UILayoutConstraintAxisVertical];
+    [D20LayoutHelper centeredItemsByLayoutMarginsGuideWithSuperView:self.view
+                                                           subviews:views
+                                                          alignment:UIStackViewAlignmentFill
+                                                       distribution:UIStackViewDistributionFillEqually
+                                                               axis:UILayoutConstraintAxisVertical
+                                                            spacing:0];
 }
 
 - (void)addMoreLabels {
@@ -63,11 +65,12 @@
         views = [views arrayByAddingObject:someLabel];
     }
     
-    [D20LayoutHelper evenConstraintsWithSuperView:self.view
-                                                   subviews:views
-                                                  alignment:UIStackViewAlignmentCenter
-                                               distribution:UIStackViewDistributionFillEqually
-                                             axis:UILayoutConstraintAxisHorizontal];
+    [D20LayoutHelper evenConstraintsByLayoutMarginsGuideWithSuperView:self.view
+                                         subviews:views
+                                        alignment:UIStackViewAlignmentCenter
+                                     distribution:UIStackViewDistributionFillEqually
+                                             axis:UILayoutConstraintAxisHorizontal
+                                          spacing:0];
 }
 
 
