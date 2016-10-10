@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
                                                subview:(UIView *)subview;
 
 /*!
- sets the subview constraints to match the superview LayoutMarginsGuide.
+ sets the subview constraints to match the superview via its LayoutMarginsGuide.
  @param superview the superview
  @param subview the subview
  */
@@ -33,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
                                                                    subview:(UIView *)subview;
     
 /*!
- sets the subview constraints to match the superview.
+ sets the subview width constraints to match the superview.
  @param superview the superview
  @param subview the subview
  */
@@ -41,7 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
                                                subview:(UIView *)subview;
     
 /*!
- sets the subview constraints to match the superview LayoutMarginsGuide.
+ sets the subview width constraints to match the superview via its LayoutMarginsGuide.
  @param superview the superview
  @param subview the subview
  */
@@ -49,7 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
                                                                    subview:(UIView *)subview;
     
 /*!
- sets the subview constraints to match the superview.
+ sets the subview height constraints to match the superview.
  @param superview the superview
  @param subview the subview
  */
@@ -57,7 +57,7 @@ NS_ASSUME_NONNULL_BEGIN
                                                subview:(UIView *)subview;
     
 /*!
- sets the subview constraints to match the superview LayoutMarginsGuide.
+ sets the subview height constraints to match the superview via its LayoutMarginsGuide.
  @param superview the superview
  @param subview the subview
  */
@@ -65,7 +65,7 @@ NS_ASSUME_NONNULL_BEGIN
                                                                    subview:(UIView *)subview;
 
 /*!
- sets the subviews constraints to be evenly distributed vertically across the superview to its edges.
+ sets the subviews to be evenly distributed across the superview to its edges.
  @param superview the superview
  @param subviews the subviews
  @param alignment the alignment
@@ -81,7 +81,7 @@ NS_ASSUME_NONNULL_BEGIN
                              spacing:(CGFloat)spacing;
 
 /*!
- sets the subviews constraints to be evenly distributed vertically across the superview to its LayoutMarginsGuide.
+ sets the subviews to be evenly distributed across the superview to its LayoutMarginsGuide.
  @param superview the superview
  @param subviews the subviews
  @param alignment the alignment
@@ -97,33 +97,33 @@ NS_ASSUME_NONNULL_BEGIN
                                                  spacing:(CGFloat)spacing;
     
 /*!
- pins the subview to the top, left and right edges of the superview, similar to the placement of a navigation bar.
+ pins the subview to the top, leading and trailing edges of the superview, similar to the placement of a navigation bar.
  @param superview the superview
  @param subview the subview
  @param height the height of the subview
- @returns the layout constraints
+ @returns the layout height constraints
  */
 + (NSArray<NSLayoutConstraint *> *)pinItemToTopWithSuperView:(UIView *)superview
                                                      subview:(UIView *)subview
                                                       height:(CGFloat)height;
     
 /*!
- pins the subview to the top with its LayoutMarginsGuide, left and right edges of the superview.
+ pins the subview to the top of the superview via its LayoutMarginsGuide, leading and trailing edges of the superview.
  @param superview the superview
  @param subview the subview
  @param height the height of the subview
- @returns the layout constraints
+ @returns the layout height constraints
  */
 + (NSArray<NSLayoutConstraint *> *)pinItemToTopWithTopLayoutMarginsGuideWithSuperView:(UIView *)superview
                                                                               subview:(UIView *)subview
                                                                                height:(CGFloat)height;
     
 /*!
- pins the subview to the top, left and right with its LayoutMarginsGuide.
+ pins the subview to the top, leading and trailing edges of the superview via its LayoutMarginsGuide.
  @param superview the superview
  @param subview the subview
  @param height the height of the subview
- @returns the layout constraints
+ @returns the layout height constraints
  */
 + (NSArray<NSLayoutConstraint *> *)pinItemToTopWithTopLeadingTrailingLayoutMarginsGuideWithSuperView:(UIView *)superview
                                                                                              subview:(UIView *)subview
@@ -133,6 +133,7 @@ NS_ASSUME_NONNULL_BEGIN
  pins item to the center of it superview, you must separetly set the height and width.
  @param superview the superview
  @param subview the subview
+ @returns the layout x, y constraints
  */
 + (NSArray<NSLayoutConstraint *> *)pinItemtoCenterOfSuperView:(UIView *)superview
                                                       subview:(UIView *)subview;
@@ -145,6 +146,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param distribution the distribution
  @param axis the axis
  @param spacing the spacing between items
+ @returns the layout x, y constraints
  */
 + (NSArray<NSLayoutConstraint *> *)centeredItemsWithSuperView:(UIView *)superview
                             subviews:( NSArray<UIView *> *)subviews
@@ -161,6 +163,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param distribution the distribution
  @param axis the axis
  @param spacing the spacing between items
+ @returns the layout x, y constraints
  */
 + (NSArray<NSLayoutConstraint *> *)centeredItemsByLayoutMarginsGuideWithSuperView:(UIView *)superview
                                                 subviews:(NSArray<UIView *> *)subviews
@@ -174,7 +177,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param superview the superview
  @param subview the subview
  @param height the height of the subview
- @returns the layout constraints
+ @returns the layout x, y constraints
  */
 + (NSArray<NSLayoutConstraint *> *)pinItemtoCenterOfSuperView:(UIView *)superview
                                                       subview:(UIView *)subview
@@ -186,7 +189,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param superview the superview
  @param subview the subview
  @param height the height of the subview
- @returns the layout constraints
+ @returns the layout height, width, x, y constraints
  */
 + (NSArray<NSLayoutConstraint *> *)constraintsForWidthAndHeightOnSuperView:(UIView *)superview
                                                                    subview:(UIView *)subview

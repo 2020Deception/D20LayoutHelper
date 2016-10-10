@@ -253,9 +253,9 @@
     
     [D20LayoutHelper prepViewsWithSuperview:superview subviews:@[subview]];
     
-    [D20LayoutHelper constraintsForWidthAndHeightOnSuperView:superview subview:superview width:width height:height];
+    NSArray<NSLayoutConstraint *> *constraints = [D20LayoutHelper constraintsForWidthAndHeightOnSuperView:superview subview:superview width:width height:height];
     
-    NSArray<NSLayoutConstraint *> *constraints = [D20LayoutHelper pinItemtoCenterOfSuperView:superview subview:subview];
+    constraints = [constraints arrayByAddingObjectsFromArray:[D20LayoutHelper pinItemtoCenterOfSuperView:superview subview:subview]];
     
     return constraints;
 }
