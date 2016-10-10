@@ -10,84 +10,6 @@
 
 @implementation D20LayoutHelper
 
-+ (NSArray<NSLayoutConstraint *> *)pinItemToTopWithSuperView:(UIView *)superview
-                                                     subview:(UIView *)subview
-                                                      height:(CGFloat)height {
-    
-    [D20LayoutHelper prepViewsWithSuperview:superview subviews:@[subview]];
-    
-    [[subview.leadingAnchor constraintEqualToAnchor:superview.leadingAnchor] setActive:YES];
-    [[subview.trailingAnchor constraintEqualToAnchor:superview.trailingAnchor] setActive:YES];
-    [[subview.topAnchor constraintEqualToAnchor:superview.topAnchor] setActive:YES];
-    
-    NSString *hashedViewString = [NSString stringWithFormat:@"_%@",
-                                  [NSNumber numberWithUnsignedInteger:subview.hash].stringValue];
-    
-    NSDictionary *viewsDictionary = @{hashedViewString : subview};
-    
-    NSArray<NSLayoutConstraint *> *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:
-                                                          [NSString stringWithFormat:@"V:[%@(==%f)]", hashedViewString, height]
-                                                                                                 options:0
-                                                                                                 metrics:nil
-                                                                                                   views:viewsDictionary];
-    
-    [NSLayoutConstraint activateConstraints:verticalConstraints];
-    
-    return verticalConstraints;
-}
-
-+ (NSArray<NSLayoutConstraint *> *)pinItemToTopWithTopLayoutMarginsGuideWithSuperView:(UIView *)superview
-                                                     subview:(UIView *)subview
-                                                      height:(CGFloat)height {
-    
-    [D20LayoutHelper prepViewsWithSuperview:superview subviews:@[subview]];
-    
-    [[subview.leadingAnchor constraintEqualToAnchor:superview.layoutMarginsGuide.leadingAnchor] setActive:YES];
-    [[subview.trailingAnchor constraintEqualToAnchor:superview.trailingAnchor] setActive:YES];
-    [[subview.topAnchor constraintEqualToAnchor:superview.topAnchor] setActive:YES];
-    
-    NSString *hashedViewString = [NSString stringWithFormat:@"_%@",
-                                  [NSNumber numberWithUnsignedInteger:subview.hash].stringValue];
-    
-    NSDictionary *viewsDictionary = @{hashedViewString : subview};
-    
-    NSArray<NSLayoutConstraint *> *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:
-                                                          [NSString stringWithFormat:@"V:[%@(==%f)]", hashedViewString, height]
-                                                                                                 options:0
-                                                                                                 metrics:nil
-                                                                                                   views:viewsDictionary];
-    
-    [NSLayoutConstraint activateConstraints:verticalConstraints];
-    
-    return verticalConstraints;
-}
-
-+ (NSArray<NSLayoutConstraint *> *)pinItemToTopWithTopLeadingTrailingLayoutMarginsGuideWithSuperView:(UIView *)superview
-                                                                       subview:(UIView *)subview
-                                                                        height:(CGFloat)height {
-    
-    [D20LayoutHelper prepViewsWithSuperview:superview subviews:@[subview]];
-    
-    [[subview.leadingAnchor constraintEqualToAnchor:superview.layoutMarginsGuide.leadingAnchor] setActive:YES];
-    [[subview.trailingAnchor constraintEqualToAnchor:superview.layoutMarginsGuide.trailingAnchor] setActive:YES];
-    [[subview.topAnchor constraintEqualToAnchor:superview.layoutMarginsGuide.topAnchor] setActive:YES];
-    
-    NSString *hashedViewString = [NSString stringWithFormat:@"_%@",
-                                  [NSNumber numberWithUnsignedInteger:subview.hash].stringValue];
-    
-    NSDictionary *viewsDictionary = @{hashedViewString : subview};
-    
-    NSArray<NSLayoutConstraint *> *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:
-                                                          [NSString stringWithFormat:@"V:[%@(==%f)]", hashedViewString, height]
-                                                                                                 options:0
-                                                                                                 metrics:nil
-                                                                                                   views:viewsDictionary];
-    
-    [NSLayoutConstraint activateConstraints:verticalConstraints];
-    
-    return verticalConstraints;
-}
-
 + (void)widthHeightEquivalentsConstraintsWithSuperView:(UIView *)superview
                                                subview:(UIView *)subview {
     
@@ -178,6 +100,84 @@
     [D20LayoutHelper widthHeightEquivalentsConstraintsByLayoutMarginsGuideWithSuperView:superview subview:stackView];
 }
     
++ (NSArray<NSLayoutConstraint *> *)pinItemToTopWithSuperView:(UIView *)superview
+                                                     subview:(UIView *)subview
+                                                      height:(CGFloat)height {
+    
+    [D20LayoutHelper prepViewsWithSuperview:superview subviews:@[subview]];
+    
+    [[subview.leadingAnchor constraintEqualToAnchor:superview.leadingAnchor] setActive:YES];
+    [[subview.trailingAnchor constraintEqualToAnchor:superview.trailingAnchor] setActive:YES];
+    [[subview.topAnchor constraintEqualToAnchor:superview.topAnchor] setActive:YES];
+    
+    NSString *hashedViewString = [NSString stringWithFormat:@"_%@",
+                                  [NSNumber numberWithUnsignedInteger:subview.hash].stringValue];
+    
+    NSDictionary *viewsDictionary = @{hashedViewString : subview};
+    
+    NSArray<NSLayoutConstraint *> *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:
+                                                          [NSString stringWithFormat:@"V:[%@(==%f)]", hashedViewString, height]
+                                                                                                 options:0
+                                                                                                 metrics:nil
+                                                                                                   views:viewsDictionary];
+    
+    [NSLayoutConstraint activateConstraints:verticalConstraints];
+    
+    return verticalConstraints;
+}
+    
++ (NSArray<NSLayoutConstraint *> *)pinItemToTopByTopLayoutMarginsGuideWithSuperView:(UIView *)superview
+                                                                              subview:(UIView *)subview
+                                                                               height:(CGFloat)height {
+    
+    [D20LayoutHelper prepViewsWithSuperview:superview subviews:@[subview]];
+    
+    [[subview.leadingAnchor constraintEqualToAnchor:superview.leadingAnchor] setActive:YES];
+    [[subview.trailingAnchor constraintEqualToAnchor:superview.trailingAnchor] setActive:YES];
+    [[subview.topAnchor constraintEqualToAnchor:superview.layoutMarginsGuide.topAnchor] setActive:YES];
+    
+    NSString *hashedViewString = [NSString stringWithFormat:@"_%@",
+                                  [NSNumber numberWithUnsignedInteger:subview.hash].stringValue];
+    
+    NSDictionary *viewsDictionary = @{hashedViewString : subview};
+    
+    NSArray<NSLayoutConstraint *> *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:
+                                                          [NSString stringWithFormat:@"V:[%@(==%f)]", hashedViewString, height]
+                                                                                                 options:0
+                                                                                                 metrics:nil
+                                                                                                   views:viewsDictionary];
+    
+    [NSLayoutConstraint activateConstraints:verticalConstraints];
+    
+    return verticalConstraints;
+}
+    
++ (NSArray<NSLayoutConstraint *> *)pinItemToTopByLayoutMarginsGuideWithSuperView:(UIView *)superview
+                                                                                             subview:(UIView *)subview
+                                                                                              height:(CGFloat)height {
+    
+    [D20LayoutHelper prepViewsWithSuperview:superview subviews:@[subview]];
+    
+    [[subview.leadingAnchor constraintEqualToAnchor:superview.layoutMarginsGuide.leadingAnchor] setActive:YES];
+    [[subview.trailingAnchor constraintEqualToAnchor:superview.layoutMarginsGuide.trailingAnchor] setActive:YES];
+    [[subview.topAnchor constraintEqualToAnchor:superview.layoutMarginsGuide.topAnchor] setActive:YES];
+    
+    NSString *hashedViewString = [NSString stringWithFormat:@"_%@",
+                                  [NSNumber numberWithUnsignedInteger:subview.hash].stringValue];
+    
+    NSDictionary *viewsDictionary = @{hashedViewString : subview};
+    
+    NSArray<NSLayoutConstraint *> *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:
+                                                          [NSString stringWithFormat:@"V:[%@(==%f)]", hashedViewString, height]
+                                                                                                 options:0
+                                                                                                 metrics:nil
+                                                                                                   views:viewsDictionary];
+    
+    [NSLayoutConstraint activateConstraints:verticalConstraints];
+    
+    return verticalConstraints;
+}
+    
 + (NSArray<NSLayoutConstraint *> *)centeredItemsWithSuperView:(UIView *)superview
                           subviews:(NSArray<UIView *> *)subviews
                          alignment:(UIStackViewAlignment)alignment
@@ -259,7 +259,85 @@
     
     return constraints;
 }
-
+    
++ (NSArray<NSLayoutConstraint *> *)pinItemToBottomWithSuperView:(UIView *)superview
+                                                     subview:(UIView *)subview
+                                                      height:(CGFloat)height {
+    
+    [D20LayoutHelper prepViewsWithSuperview:superview subviews:@[subview]];
+    
+    [[subview.leadingAnchor constraintEqualToAnchor:superview.leadingAnchor] setActive:YES];
+    [[subview.trailingAnchor constraintEqualToAnchor:superview.trailingAnchor] setActive:YES];
+    [[subview.bottomAnchor constraintEqualToAnchor:superview.bottomAnchor] setActive:YES];
+    
+    NSString *hashedViewString = [NSString stringWithFormat:@"_%@",
+                                  [NSNumber numberWithUnsignedInteger:subview.hash].stringValue];
+    
+    NSDictionary *viewsDictionary = @{hashedViewString : subview};
+    
+    NSArray<NSLayoutConstraint *> *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:
+                                                          [NSString stringWithFormat:@"V:[%@(==%f)]", hashedViewString, height]
+                                                                                                 options:0
+                                                                                                 metrics:nil
+                                                                                                   views:viewsDictionary];
+    
+    [NSLayoutConstraint activateConstraints:verticalConstraints];
+    
+    return verticalConstraints;
+}
+    
++ (NSArray<NSLayoutConstraint *> *)pinItemToBottomByBottomLayoutMarginsGuideWithSuperView:(UIView *)superview
+                                                                              subview:(UIView *)subview
+                                                                               height:(CGFloat)height {
+    
+    [D20LayoutHelper prepViewsWithSuperview:superview subviews:@[subview]];
+    
+    [[subview.leadingAnchor constraintEqualToAnchor:superview.leadingAnchor] setActive:YES];
+    [[subview.trailingAnchor constraintEqualToAnchor:superview.trailingAnchor] setActive:YES];
+    [[subview.bottomAnchor constraintEqualToAnchor:superview.layoutMarginsGuide.bottomAnchor] setActive:YES];
+    
+    NSString *hashedViewString = [NSString stringWithFormat:@"_%@",
+                                  [NSNumber numberWithUnsignedInteger:subview.hash].stringValue];
+    
+    NSDictionary *viewsDictionary = @{hashedViewString : subview};
+    
+    NSArray<NSLayoutConstraint *> *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:
+                                                          [NSString stringWithFormat:@"V:[%@(==%f)]", hashedViewString, height]
+                                                                                                 options:0
+                                                                                                 metrics:nil
+                                                                                                   views:viewsDictionary];
+    
+    [NSLayoutConstraint activateConstraints:verticalConstraints];
+    
+    return verticalConstraints;
+}
+    
++ (NSArray<NSLayoutConstraint *> *)pinItemToBottomByLayoutMarginsGuideWithSuperView:(UIView *)superview
+                                                                                             subview:(UIView *)subview
+                                                                                              height:(CGFloat)height {
+    
+    [D20LayoutHelper prepViewsWithSuperview:superview subviews:@[subview]];
+    
+    [[subview.leadingAnchor constraintEqualToAnchor:superview.layoutMarginsGuide.leadingAnchor] setActive:YES];
+    [[subview.trailingAnchor constraintEqualToAnchor:superview.layoutMarginsGuide.trailingAnchor] setActive:YES];
+    [[subview.bottomAnchor constraintEqualToAnchor:superview.layoutMarginsGuide.bottomAnchor] setActive:YES];
+    
+    NSString *hashedViewString = [NSString stringWithFormat:@"_%@",
+                                  [NSNumber numberWithUnsignedInteger:subview.hash].stringValue];
+    
+    NSDictionary *viewsDictionary = @{hashedViewString : subview};
+    
+    NSArray<NSLayoutConstraint *> *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:
+                                                          [NSString stringWithFormat:@"V:[%@(==%f)]", hashedViewString, height]
+                                                                                                 options:0
+                                                                                                 metrics:nil
+                                                                                                   views:viewsDictionary];
+    
+    [NSLayoutConstraint activateConstraints:verticalConstraints];
+    
+    return verticalConstraints;
+}
+    
 + (NSArray<NSLayoutConstraint *> *)constraintsForWidthAndHeightOnSuperView:(UIView *)superview
                                                                 subview:(UIView *)subview
                                                                      width:(CGFloat)width
