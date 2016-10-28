@@ -72,8 +72,9 @@ NS_ASSUME_NONNULL_BEGIN
  @param distribution the distribution
  @param axis the axis
  @param spacing the spacing between items
+ @returns the stackview
  */
-+ (void)evenConstraintsWithSuperView:(UIView *)superview
++ (UIStackView *)evenConstraintsWithSuperView:(UIView *)superview
                             subviews:( NSArray<UIView *> *)subviews
                            alignment:(UIStackViewAlignment)alignment
                         distribution:(UIStackViewDistribution)distribution
@@ -88,8 +89,9 @@ NS_ASSUME_NONNULL_BEGIN
  @param distribution the distribution
  @param axis the axis
  @param spacing the spacing between items
+ @returns the stackview
  */
-+ (void)evenConstraintsByLayoutMarginsGuideWithSuperView:(UIView *)superview
++ (UIStackView *)evenConstraintsByLayoutMarginsGuideWithSuperView:(UIView *)superview
                                                 subviews:(NSArray<UIView *> *)subviews
                                                alignment:(UIStackViewAlignment)alignment
                                             distribution:(UIStackViewDistribution)distribution

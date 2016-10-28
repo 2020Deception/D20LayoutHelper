@@ -64,7 +64,7 @@
     [[subview.bottomAnchor constraintEqualToAnchor:superview.layoutMarginsGuide.bottomAnchor] setActive:YES];
 }
 
-+ (void)evenConstraintsWithSuperView:(UIView *)superview
++ (UIStackView *)evenConstraintsWithSuperView:(UIView *)superview
                                     subviews:(NSArray<UIView *> *)subviews
                                    alignment:(UIStackViewAlignment)alignment
                                 distribution:(UIStackViewDistribution)distribution
@@ -80,9 +80,11 @@
                                                             spacing:spacing];
     
     [D20LayoutHelper widthHeightEquivalentsConstraintsWithSuperView:superview subview:stackView];
+    
+    return stackView;
 }
 
-+ (void)evenConstraintsByLayoutMarginsGuideWithSuperView:(UIView *)superview
++ (UIStackView *)evenConstraintsByLayoutMarginsGuideWithSuperView:(UIView *)superview
                                                         subviews:(NSArray<UIView *> *)subviews
                                                        alignment:(UIStackViewAlignment)alignment
                                                     distribution:(UIStackViewDistribution)distribution
@@ -98,6 +100,8 @@
                                                             spacing:spacing];
     
     [D20LayoutHelper widthHeightEquivalentsConstraintsByLayoutMarginsGuideWithSuperView:superview subview:stackView];
+    
+    return stackView;
 }
     
 + (NSArray<NSLayoutConstraint *> *)pinItemToTopWithSuperView:(UIView *)superview
@@ -253,7 +257,7 @@
     
     [D20LayoutHelper prepViewsWithSuperview:superview subviews:@[subview]];
     
-    NSArray<NSLayoutConstraint *> *constraints = [D20LayoutHelper constraintsForWidthAndHeightOnSuperView:superview subview:superview width:width height:height];
+    NSArray<NSLayoutConstraint *> *constraints = [D20LayoutHelper constraintsForWidthAndHeightOnSuperView:superview subview:subview width:width height:height];
     
     constraints = [constraints arrayByAddingObjectsFromArray:[D20LayoutHelper pinItemtoCenterOfSuperView:superview subview:subview]];
     
