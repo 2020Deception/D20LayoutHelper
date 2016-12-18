@@ -283,7 +283,7 @@ static float zeroConstants[] = { 0.0f, 0.0f, 0.0f, 0.0f };
     [NSLayoutConstraint activateConstraints:verticalConstraints];
     return verticalConstraints;
 }
-    
+
 + (NSArray<NSLayoutConstraint *> *)constraintsForWidthAndHeightOnSuperView:(UIView *)superview subview:(UIView *)subview width:(CGFloat)width height:(CGFloat)height {
     [D20LayoutHelper prepViewsWithSuperview:superview subviews:@[subview]];
     NSString *hashedViewString = [NSString stringWithFormat:@"_%@", [NSNumber numberWithUnsignedInteger:subview.hash].stringValue];
