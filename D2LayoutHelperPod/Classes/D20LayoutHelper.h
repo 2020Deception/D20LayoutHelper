@@ -357,7 +357,7 @@ NS_ASSUME_NONNULL_BEGIN
  @returns the layout height, width constraints
  */
 + (NSArray<NSLayoutConstraint *> *)constraintsForWidthAndHeightOnSuperView:(UIView *)superview
-                                                                forSubview:(UIView *)subview
+                                                                subview:(UIView *)subview
                                                                      width:(CGFloat)width
                                                                     height:(CGFloat)height;
 
