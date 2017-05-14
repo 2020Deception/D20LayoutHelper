@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)widthHeightEquivalentsConstraintsWithSuperView:(UIView *)superview
                                                subview:(UIView *)subview
-                                             constants:(float[4])constants;
+                                             constants:(float[_Nonnull 4])constants;
 
 
 
@@ -51,7 +51,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)widthHeightEquivalentsConstraintsByLayoutMarginsGuideWithSuperView:(UIView *)superview
                                                                    subview:(UIView *)subview
-                                                                 constants:(float[4])constants;
+                                                                 constants:(float[_Nonnull 4])constants;
 
 /*!
  sets the subview width constraints to match the superview.
@@ -69,7 +69,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)widthEquivalentsConstraintsWithSuperView:(UIView *)superview
                                          subview:(UIView *)subview
-                                       constants:(float[2])constants;
+                                       constants:(float[_Nonnull 2])constants;
 
 /*!
  sets the subview width constraints to match the superview via its LayoutMarginsGuide.
@@ -86,7 +86,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)widthEquivalentsConstraintsByLayoutMarginsGuideWithSuperView:(UIView *)superview
                                                              subview:(UIView *)subview
-                                                           constants:(float[2])constants;
+                                                           constants:(float[_Nonnull 2])constants;
 
 /*!
  sets the subview height constraints to match the superview.
@@ -103,7 +103,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)heightEquivalentsConstraintsWithSuperView:(UIView *)superview
                                           subview:(UIView *)subview
-                                        constants:(float[2])constants;
+                                        constants:(float[_Nonnull 2])constants;
 
 /*!
  sets the subview height constraints to match the superview via its LayoutMarginsGuide.
@@ -120,7 +120,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)heightEquivalentsConstraintsByLayoutMarginsGuideWithSuperView:(UIView *)superview
                                                               subview:(UIView *)subview
-                                                            constants:(float[2])constants;
+                                                            constants:(float[_Nonnull 2])constants;
 
 /*!
  sets the subviews to be evenly distributed across the superview to its edges.
@@ -177,7 +177,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSArray<NSLayoutConstraint *> *)pinItemToTopWithSuperView:(UIView *)superview
                                                      subview:(UIView *)subview
                                                       height:(CGFloat)height
-                                                   constants:(float[3])constants;
+                                                   constants:(float[_Nonnull 3])constants;
 
 /*!
  pins the subview to the top of the superview via its LayoutMarginsGuide, leading and trailing edges of the superview.
@@ -200,7 +200,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSArray<NSLayoutConstraint *> *)pinItemToTopByTopLayoutMarginsGuideWithSuperView:(UIView *)superview
                                                                               subview:(UIView *)subview
                                                                              height:(CGFloat)height
-                                                                          constants:(float[3])constants;
+                                                                          constants:(float[_Nonnull 3])constants;
 
 /*!
  pins the subview to the top, leading and trailing edges of the superview via its LayoutMarginsGuide.
@@ -223,7 +223,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSArray<NSLayoutConstraint *> *)pinItemToTopByLayoutMarginsGuideWithSuperView:(UIView *)superview
                                                                          subview:(UIView *)subview
                                                                           height:(CGFloat)height
-                                                                       constants:(float[3])constants;
+                                                                       constants:(float[_Nonnull 3])constants;
 
 /*!
  pins item to the center of it superview, you must separetly set the height and width.
@@ -301,7 +301,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSArray<NSLayoutConstraint *> *)pinItemToBottomWithSuperView:(UIView *)superview
                                                      subview:(UIView *)subview
                                                          height:(CGFloat)height
-                                                      constants:(float[3])constants;
+                                                      constants:(float[_Nonnull 3])constants;
 
 /*!
  pins the subview to the bottom of the superview via its LayoutMarginsGuide, leading and trailing edges of the superview.
@@ -324,7 +324,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSArray<NSLayoutConstraint *> *)pinItemToBottomByBottomLayoutMarginsGuideWithSuperView:(UIView *)superview
                                                                               subview:(UIView *)subview
                                                                                    height:(CGFloat)height
-                                                                                constants:(float[3])constants;
+                                                                                constants:(float[_Nonnull 3])constants;
 
 /*!
  pins the subview to the bottom, leading and trailing edges of the superview via its LayoutMarginsGuide.
@@ -347,7 +347,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSArray<NSLayoutConstraint *> *)pinItemToBottomByLayoutMarginsGuideWithSuperView:(UIView *)superview
                                                                             subview:(UIView *)subview
                                                                              height:(CGFloat)height
-                                                                           constants:(float[3])constants;
+                                                                           constants:(float[_Nonnull 3])constants;
 
 /*!
  sets the subview on the the superview with height and width contraints only
