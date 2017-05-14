@@ -25,7 +25,7 @@ Cocoapod provides a solution. Warning, you might fall in love ❤️.
   s.homepage         = 'https://github.com/2020deception/D2LayoutHelperPod'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Brian Bowman' => 'brian.bowman@carrotcreative.com' }
+  s.author           = { 'Brian Bowman' => '2020deception@gmail.com' }
   s.source           = { :git => 'https://github.com/2020deception/D2LayoutHelperPod.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/2020deception'
 
