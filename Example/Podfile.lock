@@ -1,23 +1,16 @@
 PODS:
-  - D2LayoutHelperPod (0.1.0)
-  - FBSnapshotTestCase (2.1.1):
-    - FBSnapshotTestCase/SwiftSupport (= 2.1.1)
-  - FBSnapshotTestCase/Core (2.1.1)
-  - FBSnapshotTestCase/SwiftSupport (2.1.1):
-    - FBSnapshotTestCase/Core
+  - D2LayoutHelperPod (0.7.1)
 
 DEPENDENCIES:
   - D2LayoutHelperPod (from `../`)
-  - FBSnapshotTestCase
 
 EXTERNAL SOURCES:
   D2LayoutHelperPod:
     :path: ../
 
 SPEC CHECKSUMS:
-  D2LayoutHelperPod: 746b6cc1c7f4dad0c2cbc4b380d90a0bda5ef794
-  FBSnapshotTestCase: 432afd8d059ccef7f207225894840a03fbcf7474
+  D2LayoutHelperPod: 98cbf73478409b16671198cbd2c1b0a0cd008fcb
 
-PODFILE CHECKSUM: f9b16a925399e5b0fe8585de897b4c9af20bc68b
+PODFILE CHECKSUM: d7e7afa947c8170e99bb38cc766c51a46058799d
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.1
