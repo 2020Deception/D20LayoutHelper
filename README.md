@@ -1,9 +1,15 @@
 # D2LayoutHelperPod
 
-[![CI Status](http://img.shields.io/travis/Brian Bowman/D2LayoutHelperPod.svg?style=flat)](https://travis-ci.org/Brian Bowman/D2LayoutHelperPod)
-[![Version](https://img.shields.io/cocoapods/v/D2LayoutHelperPod.svg?style=flat)](http://cocoapods.org/pods/D2LayoutHelperPod)
-[![License](https://img.shields.io/cocoapods/l/D2LayoutHelperPod.svg?style=flat)](http://cocoapods.org/pods/D2LayoutHelperPod)
-[![Platform](https://img.shields.io/cocoapods/p/D2LayoutHelperPod.svg?style=flat)](http://cocoapods.org/pods/D2LayoutHelperPod)
+Updated to support iOS 7 -> iOS 11
+```
+- (UILayoutGuide *)layoutMarginsGuide {
+    if (@available(iOS 11.0, *)) {
+        return self.safeAreaLayoutGuide;
+    } else {
+        return self.layoutMarginsGuide;
+    }
+}
+```
 
 ## Example
 
@@ -30,27 +36,10 @@ From the Example
     // set a view to match the superview
     UIView *green = [UIView new];
     green.backgroundColor = [UIColor greenColor];
-    [D20LayoutHelper widthHeightEquivalentsConstraintsWithSuperView:self.view
-                                                                                subview:green];
     
-    [self addLabels];
-    [self addMoreLabels];
+//    [D20LayoutHelper widthHeightEquivalentsConstraintsWithSuperView:self.view subview:green];
+    [green widthHeightEquivalentsConstraintsWithSuperView:self.view];
     [self addTopBar];
-    [self addBottomBar];
-}
-    
-- (void)addBottomBar {
-    UIView *bottomView = [UIView new];
-    bottomView.backgroundColor = [UIColor purpleColor];
-    
-    UILabel *navTitle = [UILabel new];
-    navTitle.text = @"add buttons/views/anything here";
-    navTitle.textColor = [UIColor cyanColor];
-    [navTitle sizeToFit];
-    
-    [D20LayoutHelper pinItemtoCenterOfSuperView:bottomView subview:navTitle];
-    
-    [D20LayoutHelper pinItemToBottomWithSuperView:self.view subview:bottomView height:60];
 }
     
 - (void)addTopBar {
@@ -62,22 +51,35 @@ From the Example
     navTitle.textColor = [UIColor blueColor];
     [navTitle sizeToFit];
     
-    [D20LayoutHelper pinItemtoCenterOfSuperView:topView subview:navTitle];
-    
-    [D20LayoutHelper pinItemToTopWithSuperView:self.view subview:topView height:60];
+//    [D20LayoutHelper pinItemtoCenterOfSuperView:topView subview:navTitle];
+    [navTitle pinItemtoCenterOfSuperView:topView];
+//    [D20LayoutHelper pinItemToTopWithSuperView:self.view subview:topView height:60];
+    [topView pinItemToTopByLayoutMarginsGuideWithSuperView:self.view height:60];
     
     UIView *marginHighBar = [UIView new];
     marginHighBar.backgroundColor = [UIColor yellowColor];
     
-    [D20LayoutHelper pinItemToTopByLayoutMarginsGuideWithSuperView:topView subview:marginHighBar height:8];
-    
+//    [D20LayoutHelper pinItemToTopByLayoutMarginsGuideWithSuperView:topView subview:marginHighBar height:8];
+    [marginHighBar pinItemToTopByLayoutMarginsGuideWithSuperView:topView height:8];
     UIView *marginLowBar = [UIView new];
     marginLowBar.backgroundColor = [UIColor yellowColor];
     
-    [D20LayoutHelper pinItemToBottomByLayoutMarginsGuideWithSuperView:topView subview:marginLowBar height:8];
-}
-
-- (void)addLabels {
+//    [D20LayoutHelper pinItemToBottomByLayoutMarginsGuideWithSuperView:topView subview:marginLowBar height:8];
+    [marginLowBar pinItemToBottomByLayoutMarginsGuideWithSuperView:topView height:8];
+    
+    UIView *bottomView = [UIView new];
+    bottomView.backgroundColor = [UIColor purpleColor];
+    
+    UILabel *lowerNavTitle = [UILabel new];
+    lowerNavTitle.text = @"add buttons/views/anything here";
+    lowerNavTitle.textColor = [UIColor cyanColor];
+    [lowerNavTitle sizeToFit];
+    
+//    [D20LayoutHelper pinItemtoCenterOfSuperView:bottomView subview:navTitle];
+    [lowerNavTitle pinItemtoCenterOfSuperView:bottomView];
+//    [D20LayoutHelper pinItemToBottomWithSuperView:self.view subview:bottomView height:60];
+    [bottomView pinItemToBottomWithSuperView:self.view height:60];
+    
     // evenly display some labels vertically
     NSArray<UIView *> *views = [NSArray new];
     
@@ -89,12 +91,25 @@ From the Example
         views = [views arrayByAddingObject:someLabel];
     }
     
-    [D20LayoutHelper centeredItemsByLayoutMarginsGuideWithSuperView:self.view
-                                                           subviews:views
-                                                          alignment:UIStackViewAlignmentFill
-                                                       distribution:UIStackViewDistributionFillEqually
-                                                               axis:UILayoutConstraintAxisVertical
-                                                            spacing:23];
+    //add some labels
+    UIView *container = [UIView new];
+    [container fillViewBetween:topView bottomView:bottomView superview:self.view topPadding:0 bottomPadding:0];
+    
+//    [D20LayoutHelper centeredItemsByLayoutMarginsGuideWithSuperView:self.view
+//                                                           subviews:views
+//                                                          alignment:UIStackViewAlignmentFill
+//                                                       distribution:UIStackViewDistributionFillEqually
+//                                                               axis:UILayoutConstraintAxisVertical
+//                                                            spacing:23];
+    
+    [UIView evenConstraintsByLayoutMarginsGuideWithSuperView:container
+                                                    subviews:views
+                                                   alignment:UIStackViewAlignmentFill
+                                                distribution:UIStackViewDistributionFillEqually
+                                                        axis:UILayoutConstraintAxisVertical
+                                                     spacing:23];
+    
+    [self addMoreLabels];
 }
 
 - (void)addMoreLabels {
@@ -116,12 +131,18 @@ From the Example
         views = [views arrayByAddingObject:someLabel];
     }
     
-    [D20LayoutHelper evenConstraintsByLayoutMarginsGuideWithSuperView:self.view
-                                         subviews:views
-                                        alignment:UIStackViewAlignmentCenter
-                                     distribution:UIStackViewDistributionFillEqually
-                                             axis:UILayoutConstraintAxisHorizontal
-                                          spacing:0];
+//    [D20LayoutHelper evenConstraintsByLayoutMarginsGuideWithSuperView:self.view
+//                                         subviews:views
+//                                        alignment:UIStackViewAlignmentCenter
+//                                     distribution:UIStackViewDistributionFillEqually
+//                                             axis:UILayoutConstraintAxisHorizontal
+//                                          spacing:0];
+    [UIView evenConstraintsByLayoutMarginsGuideWithSuperView:self.view
+                                                    subviews:views
+                                                   alignment:UIStackViewAlignmentCenter
+                                                distribution:UIStackViewDistributionFillEqually
+                                                        axis:UILayoutConstraintAxisHorizontal
+                                                     spacing:0];
 }
 ```
 produces  
