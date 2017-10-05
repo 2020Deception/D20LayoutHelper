@@ -143,14 +143,12 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  pins the subview to the top, leading and trailing edges of the superview, similar to the placement of a navigation bar.
  @param superview the superview
- @param height the height of the subview
  @returns the layout height constraints
  */
 - (NSArray<NSLayoutConstraint *> *)pinItemToTopWithSuperView:(UIView *)superview height:(CGFloat)height;
 /*!
  pins the subview to the top, leading and trailing edges of the superview, similar to the placement of a navigation bar.
  @param superview the superview
- @param height the height of the subview
  @param constants leading, top, trailing constants in that order
  @returns the layout height constraints
  */
@@ -160,14 +158,12 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  pins the subview to the top of the superview via its LayoutMarginsGuide, leading and trailing edges of the superview.
  @param superview the superview
- @param height the height of the subview
  @returns the layout height constraints
  */
 - (NSArray<NSLayoutConstraint *> *)pinItemToTopByTopLayoutMarginsGuideWithSuperView:(UIView *)superview height:(CGFloat)height;
 /*!
  pins the subview to the top of the superview via its LayoutMarginsGuide, leading and trailing edges of the superview.
  @param superview the superview
- @param height the height of the subview
  @param constants leading, top, trailing constants in that order
  @returns the layout height constraints
  */
@@ -177,14 +173,12 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  pins the subview to the top, leading and trailing edges of the superview via its LayoutMarginsGuide.
  @param superview the superview
- @param height the height of the subview
  @returns the layout height constraints
  */
 - (NSArray<NSLayoutConstraint *> *)pinItemToTopByLayoutMarginsGuideWithSuperView:(UIView *)superview height:(CGFloat)height;
 /*!
  pins the subview to the top, leading and trailing edges of the superview via its LayoutMarginsGuide.
  @param superview the superview
- @param height the height of the subview
  @param constants leading, top, trailing constants in that order
  @returns the layout height constraints
  */
@@ -236,7 +230,6 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  centers the subview on the the superview
  @param superview the superview
- @param height the height of the subview
  @returns the layout height, width, x, y constraints
  */
 - (NSArray<NSLayoutConstraint *> *)pinItemtoCenterOfSuperView:(UIView *)superview
@@ -246,7 +239,6 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  pins the subview to the bottom, leading and trailing edges of the superview, similar to the placement of a navigation bar.
  @param superview the superview
- @param height the height of the subview
  @returns the layout height constraints
  */
 - (NSArray<NSLayoutConstraint *> *)pinItemToBottomWithSuperView:(UIView *)superview
@@ -254,7 +246,6 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  pins the subview to the bottom, leading and trailing edges of the superview, similar to the placement of a navigation bar.
  @param superview the superview
- @param height the height of the subview
  @param constants leading, bottom, trailing constants in that order
  @returns the layout height constraints
  */
@@ -265,7 +256,6 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  pins the subview to the bottom of the superview via its LayoutMarginsGuide, leading and trailing edges of the superview.
  @param superview the superview
- @param height the height of the subview
  @returns the layout height constraints
  */
 - (NSArray<NSLayoutConstraint *> *)pinItemToBottomByBottomLayoutMarginsGuideWithSuperView:(UIView *)superview
@@ -273,7 +263,6 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  pins the subview to the bottom of the superview via its LayoutMarginsGuide, leading and trailing edges of the superview.
  @param superview the superview
- @param height the height of the subview
  @param constants leading, bottom, trailing constants in that order
  @returns the layout height constraints
  */
@@ -284,7 +273,6 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  pins the subview to the bottom, leading and trailing edges of the superview via its LayoutMarginsGuide.
  @param superview the superview
- @param height the height of the subview
  @returns the layout height constraints
  */
 - (NSArray<NSLayoutConstraint *> *)pinItemToBottomByLayoutMarginsGuideWithSuperView:(UIView *)superview
@@ -292,7 +280,6 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  pins the subview to the bottom, leading and trailing edges of the superview via its LayoutMarginsGuide.
  @param superview the superview
- @param height the height of the subview
  @param constants leading, bottom, trailing constants in that order
  @returns the layout height constraints
  */
@@ -303,7 +290,6 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  sets the subview on the the superview with height and width contraints only
  @param superview the superview
- @param height the height of the subview
  @returns the layout height, width constraints
  */
 - (NSArray<NSLayoutConstraint *> *)constraintsForWidthAndHeightOnSuperView:(UIView *)superview

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'D2LayoutHelperPod'
-  s.version          = '0.8.0'
+  s.version          = '0.8.1'
   s.summary          = 'This gives you some simple methods to accomplish simple common tasks with NSLayoutConstraints.'
 
 # This description is used to generate tags and improve search results.
