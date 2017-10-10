@@ -65,7 +65,7 @@ static float zeroConstants[] = { 0.0f, 0.0f, 0.0f, 0.0f };
 
 - (void)centerItemWithLayoutMarginsGuideBelowItem:(UIView *)topview superview:(UIView*)superview width:(CGFloat)width height:(CGFloat)height constant:(CGFloat)constant {
     [self prepViewsWithSuperview:superview];
-    [[self.layoutMarginsGuide.topAnchor constraintEqualToAnchor:topview.layoutMarginsGuide.bottomAnchor constant:constant] setActive:YES];
+    [[self.d20LayoutMarginsGuide.topAnchor constraintEqualToAnchor:topview.d20LayoutMarginsGuide.bottomAnchor constant:constant] setActive:YES];
     [self setHeightConstant:(long)height widthConstant:(long)width];
     [self centerHorizontally:superview];
 }
@@ -87,7 +87,7 @@ static float zeroConstants[] = { 0.0f, 0.0f, 0.0f, 0.0f };
 
 - (void)centerItemWithLayoutMarginsGuideAboveItem:(UIView *)bottomview superview:(UIView*)superview width:(CGFloat)width height:(CGFloat)height constant:(CGFloat)constant {
     [self prepViewsWithSuperview:superview];
-    [[self.layoutMarginsGuide.bottomAnchor constraintEqualToAnchor:bottomview.layoutMarginsGuide.topAnchor constant:constant] setActive:YES];
+    [[self.d20LayoutMarginsGuide.bottomAnchor constraintEqualToAnchor:bottomview.d20LayoutMarginsGuide.topAnchor constant:constant] setActive:YES];
     [self setHeightConstant:(long)height widthConstant:(long)width];
     [self centerHorizontally:superview];
 }
@@ -160,10 +160,10 @@ static float zeroConstants[] = { 0.0f, 0.0f, 0.0f, 0.0f };
 
 - (void)widthHeightEquivalentsConstraintsByLayoutMarginsGuideWithSuperView:(UIView *)superview constants:(float *)constants {
     [self prepViewsWithSuperview:superview];
-    [[self.topAnchor constraintEqualToAnchor:superview.layoutMarginsGuide.topAnchor constant:constants[0]] setActive:YES];
-    [[self.rightAnchor constraintEqualToAnchor:superview.layoutMarginsGuide.rightAnchor constant:constants[1]] setActive:YES];
-    [[self.bottomAnchor constraintEqualToAnchor:superview.layoutMarginsGuide.bottomAnchor constant:constants[2]] setActive:YES];
-    [[self.leftAnchor constraintEqualToAnchor:superview.layoutMarginsGuide.leftAnchor constant:constants[3]] setActive:YES];
+    [[self.topAnchor constraintEqualToAnchor:superview.d20LayoutMarginsGuide.topAnchor constant:constants[0]] setActive:YES];
+    [[self.rightAnchor constraintEqualToAnchor:superview.d20LayoutMarginsGuide.rightAnchor constant:constants[1]] setActive:YES];
+    [[self.bottomAnchor constraintEqualToAnchor:superview.d20LayoutMarginsGuide.bottomAnchor constant:constants[2]] setActive:YES];
+    [[self.leftAnchor constraintEqualToAnchor:superview.d20LayoutMarginsGuide.leftAnchor constant:constants[3]] setActive:YES];
 }
 
 - (void)widthEquivalentsConstraintsWithSuperView:(UIView *)superview {
@@ -182,8 +182,8 @@ static float zeroConstants[] = { 0.0f, 0.0f, 0.0f, 0.0f };
 
 - (void)widthEquivalentsConstraintsByLayoutMarginsGuideWithSuperView:(UIView *)superview constants:(float *)constants {
     [self prepViewsWithSuperview:superview];
-    [[self.leadingAnchor constraintEqualToAnchor:superview.layoutMarginsGuide.leadingAnchor constant:constants[0]] setActive:YES];
-    [[self.trailingAnchor constraintEqualToAnchor:superview.layoutMarginsGuide.trailingAnchor constant:constants[1]] setActive:YES];
+    [[self.leadingAnchor constraintEqualToAnchor:superview.d20LayoutMarginsGuide.leadingAnchor constant:constants[0]] setActive:YES];
+    [[self.trailingAnchor constraintEqualToAnchor:superview.d20LayoutMarginsGuide.trailingAnchor constant:constants[1]] setActive:YES];
 }
 
 - (void)heightEquivalentsConstraintsWithSuperView:(UIView *)superview {
@@ -202,8 +202,8 @@ static float zeroConstants[] = { 0.0f, 0.0f, 0.0f, 0.0f };
 
 - (void)heightEquivalentsConstraintsByLayoutMarginsGuideWithSuperView:(UIView *)superview constants:(float *)constants {
     [self prepViewsWithSuperview:superview];
-    [[self.topAnchor constraintEqualToAnchor:superview.layoutMarginsGuide.topAnchor constant:constants[0]] setActive:YES];
-    [[self.bottomAnchor constraintEqualToAnchor:superview.layoutMarginsGuide.bottomAnchor constant:constants[1]] setActive:YES];
+    [[self.topAnchor constraintEqualToAnchor:superview.d20LayoutMarginsGuide.topAnchor constant:constants[0]] setActive:YES];
+    [[self.bottomAnchor constraintEqualToAnchor:superview.d20LayoutMarginsGuide.bottomAnchor constant:constants[1]] setActive:YES];
 }
 
 + (UIStackView *)evenConstraintsWithSuperView:(UIView *)superview
@@ -257,7 +257,7 @@ static float zeroConstants[] = { 0.0f, 0.0f, 0.0f, 0.0f };
 - (NSArray<NSLayoutConstraint *> *)pinItemToTopByTopLayoutMarginsGuideWithSuperView:(UIView *)superview height:(CGFloat)height constants:(float *)constants {
     [self prepViewsWithSuperview:superview];
     [[self.leadingAnchor constraintEqualToAnchor:superview.leadingAnchor constant:constants[0]] setActive:YES];
-    [[self.topAnchor constraintEqualToAnchor:superview.layoutMarginsGuide.topAnchor constant:constants[1]] setActive:YES];
+    [[self.topAnchor constraintEqualToAnchor:superview.d20LayoutMarginsGuide.topAnchor constant:constants[1]] setActive:YES];
     [[self.trailingAnchor constraintEqualToAnchor:superview.trailingAnchor constant:constants[2]] setActive:YES];
     NSString *hashedViewString = [NSString stringWithFormat:@"_%@", [NSNumber numberWithUnsignedInteger:self.hash].stringValue];
     NSDictionary *viewsDictionary = @{hashedViewString : self};
@@ -272,9 +272,9 @@ static float zeroConstants[] = { 0.0f, 0.0f, 0.0f, 0.0f };
 
 - (NSArray<NSLayoutConstraint *> *)pinItemToTopByLayoutMarginsGuideWithSuperView:(UIView *)superview height:(CGFloat)height {
     [self prepViewsWithSuperview:superview];
-    [[self.leadingAnchor constraintEqualToAnchor:superview.layoutMarginsGuide.leadingAnchor] setActive:YES];
-    [[self.topAnchor constraintEqualToAnchor:superview.layoutMarginsGuide.topAnchor] setActive:YES];
-    [[self.trailingAnchor constraintEqualToAnchor:superview.layoutMarginsGuide.trailingAnchor] setActive:YES];
+    [[self.leadingAnchor constraintEqualToAnchor:superview.d20LayoutMarginsGuide.leadingAnchor] setActive:YES];
+    [[self.topAnchor constraintEqualToAnchor:superview.d20LayoutMarginsGuide.topAnchor] setActive:YES];
+    [[self.trailingAnchor constraintEqualToAnchor:superview.d20LayoutMarginsGuide.trailingAnchor] setActive:YES];
     NSString *hashedViewString = [NSString stringWithFormat:@"_%@", [NSNumber numberWithUnsignedInteger:self.hash].stringValue];
     NSDictionary *viewsDictionary = @{hashedViewString : self};
     NSArray<NSLayoutConstraint *> *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:
@@ -288,9 +288,9 @@ static float zeroConstants[] = { 0.0f, 0.0f, 0.0f, 0.0f };
 
 - (NSArray<NSLayoutConstraint *> *)pinItemToTopByLayoutMarginsGuideWithSuperView:(UIView *)superview height:(CGFloat)height constants:(float *)constants {
     [self prepViewsWithSuperview:superview];
-    [[self.leadingAnchor constraintEqualToAnchor:superview.layoutMarginsGuide.leadingAnchor constant:constants[0]] setActive:YES];
-    [[self.topAnchor constraintEqualToAnchor:superview.layoutMarginsGuide.topAnchor constant:constants[1]] setActive:YES];
-    [[self.trailingAnchor constraintEqualToAnchor:superview.layoutMarginsGuide.trailingAnchor constant:constants[2]] setActive:YES];
+    [[self.leadingAnchor constraintEqualToAnchor:superview.d20LayoutMarginsGuide.leadingAnchor constant:constants[0]] setActive:YES];
+    [[self.topAnchor constraintEqualToAnchor:superview.d20LayoutMarginsGuide.topAnchor constant:constants[1]] setActive:YES];
+    [[self.trailingAnchor constraintEqualToAnchor:superview.d20LayoutMarginsGuide.trailingAnchor constant:constants[2]] setActive:YES];
     NSString *hashedViewString = [NSString stringWithFormat:@"_%@", [NSNumber numberWithUnsignedInteger:self.hash].stringValue];
     NSDictionary *viewsDictionary = @{hashedViewString : self};
     NSArray<NSLayoutConstraint *> *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:
@@ -381,7 +381,7 @@ static float zeroConstants[] = { 0.0f, 0.0f, 0.0f, 0.0f };
 - (NSArray<NSLayoutConstraint *> *)pinItemToBottomByBottomLayoutMarginsGuideWithSuperView:(UIView *)superview height:(CGFloat)height constants:(float *)constants {
     [self prepViewsWithSuperview:superview];
     [[self.leadingAnchor constraintEqualToAnchor:superview.leadingAnchor constant:constants[0]] setActive:YES];
-    [[self.bottomAnchor constraintEqualToAnchor:superview.layoutMarginsGuide.bottomAnchor constant:constants[1]] setActive:YES];
+    [[self.bottomAnchor constraintEqualToAnchor:superview.d20LayoutMarginsGuide.bottomAnchor constant:constants[1]] setActive:YES];
     [[self.trailingAnchor constraintEqualToAnchor:superview.trailingAnchor constant:constants[2]] setActive:YES];
     NSString *hashedViewString = [NSString stringWithFormat:@"_%@", [NSNumber numberWithUnsignedInteger:self.hash].stringValue];
     NSDictionary *viewsDictionary = @{hashedViewString : self};
@@ -400,9 +400,9 @@ static float zeroConstants[] = { 0.0f, 0.0f, 0.0f, 0.0f };
 
 - (NSArray<NSLayoutConstraint *> *)pinItemToBottomByLayoutMarginsGuideWithSuperView:(UIView *)superview height:(CGFloat)height constants:(float *)constants {
     [self prepViewsWithSuperview:superview];
-    [[self.leadingAnchor constraintEqualToAnchor:superview.layoutMarginsGuide.leadingAnchor constant:constants[0]] setActive:YES];
-    [[self.bottomAnchor constraintEqualToAnchor:superview.layoutMarginsGuide.bottomAnchor constant:constants[1]] setActive:YES];
-    [[self.trailingAnchor constraintEqualToAnchor:superview.layoutMarginsGuide.trailingAnchor constant:constants[2]] setActive:YES];
+    [[self.leadingAnchor constraintEqualToAnchor:superview.d20LayoutMarginsGuide.leadingAnchor constant:constants[0]] setActive:YES];
+    [[self.bottomAnchor constraintEqualToAnchor:superview.d20LayoutMarginsGuide.bottomAnchor constant:constants[1]] setActive:YES];
+    [[self.trailingAnchor constraintEqualToAnchor:superview.d20LayoutMarginsGuide.trailingAnchor constant:constants[2]] setActive:YES];
     NSString *hashedViewString = [NSString stringWithFormat:@"_%@", [NSNumber numberWithUnsignedInteger:self.hash].stringValue];
     NSDictionary *viewsDictionary = @{hashedViewString : self};
     NSArray<NSLayoutConstraint *> *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:
@@ -477,7 +477,7 @@ static float zeroConstants[] = { 0.0f, 0.0f, 0.0f, 0.0f };
     return stackView;
 }
 
-- (UILayoutGuide *)layoutMarginsGuide {
+- (UILayoutGuide *)d20LayoutMarginsGuide {
     if (@available(iOS 11.0, *)) {
         return self.safeAreaLayoutGuide;
     } else {
